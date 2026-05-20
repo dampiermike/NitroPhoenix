@@ -11,7 +11,10 @@ import os
 import numpy as np
 import pandas as pd
 
-DATA_DIR = "/Users/mikedampier/Documents/Development/NitroPhoenix/data/csv/history"
+# Resolve relative to this file so the engine works wherever the project is
+# checked out (Backtester/ sits one level below the project root).
+DATA_DIR = os.path.normpath(os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), os.pardir, "data", "csv", "history"))
 
 BACKTEST_START = pd.Timestamp("2000-01-03")
 BACKTEST_END = pd.Timestamp("2026-04-01")
