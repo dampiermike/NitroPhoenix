@@ -513,13 +513,15 @@ def send_imessage(numbers: list[str], body: str) -> None:
     """Send via Continuity (paired iPhone). macOS only."""
     for num in numbers:
         service = "SMS" if num in SMS_FORCE else "iMessage"
+        # `service` is injected as a bare AppleScript enum (iMessage / SMS).
+        # Comparing `service type` against a quoted string or a list fails
+        # with "-1700 can't make ... into type constant".
         script = f'''
 on run argv
-    set targetService to "{service}"
     set targetNumber to "{num}"
     set msgBody to (item 1 of argv)
     tell application "Messages"
-        set targetBuddy to participant targetNumber of (first service whose service type is {{targetService}})
+        set targetBuddy to participant targetNumber of (first service whose service type = {service})
         send msgBody to targetBuddy
     end tell
 end run
