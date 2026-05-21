@@ -1,0 +1,207 @@
+==========================================
+  Phoenix Daily Run — 2026-05-20 11:48:29
+  python: /usr/bin/python3
+  root:   /Users/mikedampier/Library/Mobile Documents/com~apple~CloudDocs/Stocks/NitroPhoenix
+==========================================
+
+── Step 1/6: Yahoo daily fetch (14 macros + SQQQ + VIX) ──
+/Users/mikedampier/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/mikedampier/Library/Mobile Documents/com~apple~CloudDocs/Stocks/NitroPhoenix/fetch_yahoo_daily.py:94: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df['Date'] = pd.to_datetime(df['Date'])
+/Users/mikedampier/Library/Mobile Documents/com~apple~CloudDocs/Stocks/NitroPhoenix/fetch_yahoo_daily.py:94: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df['Date'] = pd.to_datetime(df['Date'])
+fetch_yahoo_daily  2026-05-20
+project root: /Users/mikedampier/Library/Mobile Documents/com~apple~CloudDocs/Stocks/NitroPhoenix
+
+── Legacy format (SQQQ, ^VIX) ─────────────────────────────
+
+── SQQQ → sqqq-from-yahoo.csv
+  Downloaded 5 rows (2026-05-14 → 2026-05-20)
+  Snapshot → sqqq_2026-05-20.csv
+  ✅ Added 1 row(s) to sqqq-from-yahoo.csv  (now 4093 rows, latest 2026-05-20)
+
+── ^VIX → vix-from-yahoo.csv
+  Downloaded 5 rows (2026-05-14 → 2026-05-20)
+  Snapshot → vix_2026-05-20.csv
+  ✅ Added 1 row(s) to vix-from-yahoo.csv  (now 9163 rows, latest 2026-05-20)
+
+── Macro format (14 Yahoo CSVs) ─────────────────────────
+
+── ^TNX → ^TNX_historical_data.csv
+  Downloaded 5 rows (2026-05-14 → 2026-05-20)
+  Snapshot → tnx_2026-05-20.csv
+  History already up to date for ^TNX_historical_data.csv.
+
+── ^IRX → ^IRX_historical_data.csv
+  Downloaded 5 rows (2026-05-14 → 2026-05-20)
+  Snapshot → irx_2026-05-20.csv
+  History already up to date for ^IRX_historical_data.csv.
+
+── TLT → TLT_historical_data.csv
+  Downloaded 5 rows (2026-05-14 → 2026-05-20)
+  Snapshot → tlt_2026-05-20.csv
+  History already up to date for TLT_historical_data.csv.
+
+── DX-Y.NYB → DX-Y.NYB_historical_data.csv
+  Downloaded 4 rows (2026-05-15 → 2026-05-20)
+  Snapshot → dx-y_nyb_2026-05-20.csv
+  History already up to date for DX-Y.NYB_historical_data.csv.
+
+── GLD → GLD_historical_data.csv
+  Downloaded 5 rows (2026-05-14 → 2026-05-20)
+  Snapshot → gld_2026-05-20.csv
+  History already up to date for GLD_historical_data.csv.
+
+── SPY → SPY_historical_data.csv
+  Downloaded 5 rows (2026-05-14 → 2026-05-20)
+  Snapshot → spy_2026-05-20.csv
+  History already up to date for SPY_historical_data.csv.
+
+── SMH → SMH_historical_data.csv
+  Downloaded 5 rows (2026-05-14 → 2026-05-20)
+  Snapshot → smh_2026-05-20.csv
+  History already up to date for SMH_historical_data.csv.
+
+── IWM → IWM_historical_data.csv
+  Downloaded 5 rows (2026-05-14 → 2026-05-20)
+  Snapshot → iwm_2026-05-20.csv
+  History already up to date for IWM_historical_data.csv.
+
+── HYG → HYG_historical_data.csv
+  Downloaded 5 rows (2026-05-14 → 2026-05-20)
+  Snapshot → hyg_2026-05-20.csv
+  History already up to date for HYG_historical_data.csv.
+
+── LQD → LQD_historical_data.csv
+  Downloaded 5 rows (2026-05-14 → 2026-05-20)
+  Snapshot → lqd_2026-05-20.csv
+  History already up to date for LQD_historical_data.csv.
+
+── VWEHX → VWEHX_historical_data.csv
+  Downloaded 4 rows (2026-05-14 → 2026-05-19)
+  Snapshot → vwehx_2026-05-20.csv
+  History already up to date for VWEHX_historical_data.csv.
+
+── ^VVIX → ^VVIX_historical_data.csv
+  Downloaded 5 rows (2026-05-14 → 2026-05-20)
+  Snapshot → vvix_2026-05-20.csv
+  History already up to date for ^VVIX_historical_data.csv.
+
+── ^VXN → ^VXN_historical_data.csv
+  Downloaded 5 rows (2026-05-14 → 2026-05-20)
+  Snapshot → vxn_2026-05-20.csv
+  History already up to date for ^VXN_historical_data.csv.
+
+── ^VIX9D → ^VIX9D_historical_data.csv
+  Downloaded 5 rows (2026-05-14 → 2026-05-20)
+  Snapshot → vix9d_2026-05-20.csv
+  History already up to date for ^VIX9D_historical_data.csv.
+
+Done.  Rows added across all files: 2.
+
+── Step 2/6: VectorVest daily fetch (QQQ, TQQQ, timing) ──
+/Users/mikedampier/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-05-20T11:48:35.743511] fetch_vv_daily  2026-05-20
+
+/Users/mikedampier/Library/Mobile Documents/com~apple~CloudDocs/Stocks/NitroPhoenix/fetch_vv_daily.py:112: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df['Date'] = pd.to_datetime(df['Date'])
+── VectorVest REST API timing ────────────────────────────────
+  Fetched 10 rows  (2026-05-07 → 2026-05-20)
+  Snapshot → timing_2026-05-20.csv
+  ✅ vectorvest-views-w3place-precision.csv: added 1 row(s) from timing table: [datetime.date(2026, 5, 20)]
+  Trading day resolved from API: 2026-05-20
+
+── StockViewer ───────────────────────────────────────────────
+Login form loaded
+Filled username: dampiermike@gmail.com
+Filled password
+Clicking login button: input[name*='btnLogin' i]
+Login completed, current URL: https://www.vectorvest.com/vvlogin/YourAccount.aspx
+Login form not found — may already be logged in
+  StockViewer loaded: VectorVest Stock Viewer
+/Users/mikedampier/Library/Mobile Documents/com~apple~CloudDocs/Stocks/NitroPhoenix/fetch_vv_daily.py:112: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df['Date'] = pd.to_datetime(df['Date'])
+/Users/mikedampier/Library/Mobile Documents/com~apple~CloudDocs/Stocks/NitroPhoenix/fetch_vv_daily.py:112: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df['Date'] = pd.to_datetime(df['Date'])
+/Users/mikedampier/Library/Mobile Documents/com~apple~CloudDocs/Stocks/NitroPhoenix/fetch_vv_daily.py:112: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df['Date'] = pd.to_datetime(df['Date'])
+  Parsed: TQQQ — ProShares UltraPro QQQ @ 72.93
+  Parsed: QQQ — Invesco QQQ Trust Series 1 @ 701.53
+  Parsed: VVC — VV Composite @ 80.949
+
+  Snapshot → stockviewer_2026-05-20.csv
+
+Symbol  Price   RV   RS   RT  VST REC   Stop
+  TQQQ  72.93 1.00 1.00 1.80 1.36   B  60.44
+   QQQ 701.53 1.00 1.00 1.41 1.18   B 633.58
+   VVC 80.949 0.91 0.85 0.95 0.93   H  76.37
+
+  ✅ qqq-from-vv.csv: added 2026-05-20  Close=701.53  RT=1.41
+  ✅ tqqq-from-vv.csv: added 2026-05-20  Close=72.93  RT=1.80
+  ✅ vectorvest-views-w3place-precision.csv: updated 2026-05-20  VVC-Price 81.957 → 80.949 (StockViewer, 3dp)  VVC-RT=0.95
+
+── Step 3/6: Sync shared files from Nitro (Nitro = source of truth) ──
+  copied  qqq-from-vv.csv
+  copied  sqqq-from-yahoo.csv
+  copied  synthetic-tqqq-ohlc-1999-2010.csv
+  copied  tqqq-from-vv.csv
+  copied  vectorvest-views-w3place-precision.csv
+  copied  vix-from-yahoo.csv
+Nitro sync: 6 copied, 0 not present in Nitro.
+
+── Step 4/6: Freshness check (aborts run if any file stale) ──
+/Users/mikedampier/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+validate_freshness
+  project root:  /Users/mikedampier/Library/Mobile Documents/com~apple~CloudDocs/Stocks/NitroPhoenix
+  expected TD:   2026-05-20  (source: SPY (yfinance))
+
+  file                                     last bar      TD behind   tol   status
+  ----------------------------------------------------------------------------
+  DX-Y.NYB_historical_data.csv             2026-05-20            0     0   ✓
+  GLD_historical_data.csv                  2026-05-20            0     0   ✓
+  HYG_historical_data.csv                  2026-05-20            0     0   ✓
+  IWM_historical_data.csv                  2026-05-20            0     0   ✓
+  LQD_historical_data.csv                  2026-05-20            0     0   ✓
+  SMH_historical_data.csv                  2026-05-20            0     0   ✓
+  SPY_historical_data.csv                  2026-05-20            0     0   ✓
+  TLT_historical_data.csv                  2026-05-20            0     0   ✓
+  VWEHX_historical_data.csv                2026-05-19            1     1   ✓
+  ^IRX_historical_data.csv                 2026-05-20            0     0   ✓
+  ^TNX_historical_data.csv                 2026-05-20            0     0   ✓
+  ^VIX9D_historical_data.csv               2026-05-20            0     0   ✓
+  ^VVIX_historical_data.csv                2026-05-20            0     0   ✓
+  ^VXN_historical_data.csv                 2026-05-20            0     0   ✓
+  qqq-from-vv.csv                          2026-05-20            0     0   ✓
+  sqqq-from-yahoo.csv                      2026-05-20            0     0   ✓
+  tqqq-from-vv.csv                         2026-05-20            0     0   ✓
+  vectorvest-views-w3place-precision.csv   2026-05-20            0     0   ✓
+  vix-from-yahoo.csv                       2026-05-20            0     0   ✓
+
+  ✅ all 19 live files current (1 static file(s) skipped)
+
+── Step 5/6: Phoenix daily signal ──
+Phoenix daily signal — 2026-05-20
+Loading data and computing macro signals...
+Traceback (most recent call last):
+  File "/Users/mikedampier/Library/Mobile Documents/com~apple~CloudDocs/Stocks/NitroPhoenix/phoenix_daily_signal.py", line 592, in <module>
+    sys.exit(main())
+  File "/Users/mikedampier/Library/Mobile Documents/com~apple~CloudDocs/Stocks/NitroPhoenix/phoenix_daily_signal.py", line 548, in main
+    df = build_step1(end_date=today)
+  File "/Users/mikedampier/Library/Mobile Documents/com~apple~CloudDocs/Stocks/NitroPhoenix/Backtester/phoenix.py", line 155, in build_step1
+    qqq = _read_qqq_vv()
+  File "/Users/mikedampier/Library/Mobile Documents/com~apple~CloudDocs/Stocks/NitroPhoenix/Backtester/phoenix.py", line 28, in _read_qqq_vv
+    df = pd.read_csv(path, encoding="utf-8-sig")
+  File "/Users/mikedampier/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/mikedampier/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/mikedampier/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/mikedampier/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/Users/mikedampier/Library/Python/3.9/lib/python/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/mikedampier/Documents/Development/NitroPhoenix/data/csv/history/qqq-from-vv.csv'

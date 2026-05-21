@@ -265,13 +265,33 @@ def fetch_timing_table(email: str, password: str, num_days: int = 10) -> pd.Data
 def merge_ohlcv(rec: dict, hist_path: Path, trading_day: date):
     """Merge a QQQ or TQQQ StockViewer record into an OHLCV history file.
     Uses last_trading_day() date — not today — to avoid weekend/late-run misdating.
-    Duplicate check: if the trading day already exists, skips without overwriting."""
+    Duplicate check: if the trading day already exists, skips without overwriting.
+    Stale-read guard: if StockViewer's OHLC matches the most recent row, VectorVest
+    has not posted a new EOD bar yet (e.g. the fetch ran mid-session) — skip rather
+    than stamp yesterday's bar with today's date."""
     df  = load_history(hist_path)
     ts  = pd.Timestamp(trading_day)
 
     if ts in set(df['Date']):
         print(f"  ⚠️  {hist_path.name}: {trading_day} already exists — skipping (duplicate)")
         return
+
+    def _close_enough(a, b, tol=0.01):
+        try:
+            return abs(float(a) - float(b)) <= tol
+        except (TypeError, ValueError):
+            return False
+
+    if not df.empty:
+        last = df.iloc[-1]
+        if (_close_enough(last['Open'],  rec.get('Open'))  and
+                _close_enough(last['High'],  rec.get('High'))  and
+                _close_enough(last['Low'],   rec.get('Low'))   and
+                _close_enough(last['Close'], rec.get('Price'))):
+            print(f"  ⚠️  {hist_path.name}: StockViewer OHLC matches the last row "
+                  f"({last['Date'].date()}) — VectorVest has not posted a new bar; "
+                  f"skipping (avoids stamping a stale bar as {trading_day})")
+            return
 
     new_row = pd.DataFrame([{
         'Date':   ts,
