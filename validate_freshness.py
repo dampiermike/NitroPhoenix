@@ -55,7 +55,10 @@ DEFAULT_TOLERANCE = 0
 # Per-file overrides: tolerance in NYSE trading days.  Add files here that have
 # known publication lag (e.g. mutual funds posted next day).
 FILE_TOL: dict[str, int] = {
-    "VWEHX_historical_data.csv": 1,   # Vanguard mutual fund — Yahoo posts T+1
+    # Vanguard mutual fund — Yahoo typically posts T+1, and after a market
+    # holiday the 3pm-ET run sees a 2-TD lag (e.g. Tue after Memorial Day:
+    # last bar is the prior Friday, today's NAV hasn't posted yet).
+    "VWEHX_historical_data.csv": 2,
 }
 
 # Files that never update — skip the check.
